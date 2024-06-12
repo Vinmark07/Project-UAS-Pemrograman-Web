@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TaskTie</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="todo.js"></script>
+</head>
+
+<body>
+
+    <!--Header-->
+    <nav>
+        <div class="top">
+            <div class="judul"><a href=''>Tasktie</a></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="tasktie.html">Home</a></li>
+                    <li><a href="login.html">To do list</a></li>
+                    <li><a href="our team.html">Our Team</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <!--page login-->
+    <div id="login-container">
+        <div class="tengah">
+            <h1>TaskTie Login</h1>
+            <form action="" id="login-form">
+                <input id="username" type="text" placeholder="username: admin">
+                <input id="password" type="password" placeholder="password: admin">
+                <button id="button-login">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!--Page Edit-->
+    <div id="modal" class="modal">
+        <div class="tengah">
+            <div class="container">
+                <h4>Edit</h4>
+                <form id="taskFormModal">
+                    <input type="hidden" value="" id="taskIndexModal">
+                    <input style="width: 350px;" type="text" id="taskInputModal" placeholder="Edit task...">
+                    <select id="taskCategoryModal">
+                        <option value="">Select Category</option>
+                        <option value="research">Research</option>
+                        <option value="writing">Writing</option>
+                        <option value="editing">Editing</option>
+                        <option value="scheduling">Scheduling</option>
+                        <option value="promotion">Promotion</option>
+                    </select>
+
+                    <input type="datetime-local" id="taskReminderModal">
+                    <select id="taskPriorityModal">
+                        <option value="">Select Priority</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+
+                    <button type="submit" id="EditTaskModal">Edit Task</button>
+                    <button type="submit" id="close-modal" class="modal1">Close Modal</button>
+                    <script>
+                        document.getElementById('close-modal').addEventListener('click', function () {
+                            document.getElementById('modal').style.display = 'none';
+                        })
+                    </script>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Page To Do List-->
+    <div class="tengah">
+        <div class="container" id="container">
+            <button id="button-logout" class="buttonlog">Logout</button>
+            <h1>TaskTie</h1>
+                <form id="taskForm">
+                    <input type="text" id="taskInput" placeholder="Add a new task...">
+                    <select id="taskCategory">
+                        <option value="">Select Category</option>
+                        <option value="research">Research</option>
+                        <option value="writing">Writing</option>
+                        <option value="editing">Editing</option>
+                        <option value="scheduling">Scheduling</option>
+                        <option value="promotion">Promotion</option>
+                    </select>
+
+                    <input type="datetime-local" id="taskReminder">
+                    <select id="taskPriority">
+                        <option value="">Select Priority</option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <button type="submit" id="AddTask">Add Task</button>
+                </form>
+
+            <label for="priority-filter">Priority Filter:</label>
+            <select id="priority-filter">
+                <option value="">All</option>
+                <option value="low">Low Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+
+            <label for="category-filter">Category Filter:</label>
+            <select id="category-filter">
+                <option value="">All</option>
+                <option value="research">Research</option>
+                <option value="writing">Writing</option>
+                <option value="editing">Editing</option>
+                <option value="scheduling">Scheduling</option>
+                <option value="promotion">Promotion</option>
+            </select>
+            <ul id="taskList"></ul>
+        </div>
+    </div>
+
+</body>
+</html>
